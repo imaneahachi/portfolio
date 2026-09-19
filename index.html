@@ -3,186 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imane Ahachi | Bientôt Disponible</title>
+    <title>Imane Ahachi | Data Science & Intelligence Artificielle</title>
+    <meta name="description" content="Portfolio d'Imane Ahachi — Étudiante en Master Data Science et Systèmes Intelligents. Projets, compétences et parcours académique.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --accent: #00bcd4;
-            --text-main: #1a1a1b;
-            --text-dim: #5c636a;
-            --glass-bg: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(0, 0, 0, 0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        #bg-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 3.5rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #00f2ff, #7000ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            color: var(--text-dim);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .social-links a {
-            color: var(--text-dim);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        footer {
-            position: absolute;
-            bottom: 2rem;
-            width: 100%;
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            opacity: 0.6;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
+    <!-- Navigation -->
+<nav id="navbar">
+    <div class="container nav-content">
+        <a href="#home" class="nav-brand">Imane Ahachi</a>
 
-    <div class="container">
-        <h1><span class="gradient-text">Bientôt Disponible</span></h1>
-        <p>Le portfolio de <strong>Imane Ahachi</strong> est en cours de préparation.</p>
-        
+        <button class="mobile-nav-toggle" aria-label="Menu Toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links">
+            <a href="#about">À propos</a>
+            <a href="#academic">Formation</a>
+            <a href="#skills">Compétences</a>
+            <a href="#projects">Projets</a>
+            <!-- <a href="#experience">certification</a> -->
+
+            <a href="#experience">Expérience</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <!-- Language Switch -->
+            <div class="lang-switch" role="group" aria-label="Changer de langue">
+                <a href="index.html" class="lang-btn active" lang="fr">FR</a>
+                <a href="portfolio-en.html" class="lang-btn" lang="en">EN</a>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" aria-label="Basculer le mode sombre">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+        <div class="container hero-content">
+            <div class="availability-badge reveal">
+                <span class="pulse-dot"></span>
+                Disponible pour un stage PFE 
+            </div>
+            <h1 class="reveal">Imane Ahachi</h1>
+            <p class="hero-subtitle reveal">Étudiante en Master – Sciences des Données &amp; Systèmes Intelligents </p>
+            <p class="reveal">Passionnée par la Data et l'IA, à la recherche d'un stage PFE pour mettre mes compétences en pratique.</p>
+            <!-- <div class="hero-contact-info reveal">
+                <a href="mailto:imanahachi14@gmail.com"><i class="fas fa-envelope"></i> imanahachi14@gmail.com</a>
+                <a href="https://www.linkedin.com/in/imane-ahachi-a26218288/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/imaneahachi" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            </div> -->
+            <div class="hero-buttons reveal">
+                <a class="btn btn--primary" href="#contact">Me contacter</a>
+                <a class="btn btn--primary" href="#projects">Voir mes projets</a>
+            </div>
+
+        </div>
+        </div>
+        <div>
+           
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>À propos</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-card reveal">
+                <p>Actuellement en deuxième année de <strong>Master en Science des Données et Systèmes Intelligents</strong> à la Faculté Polydisciplinaire de Nador (FPN), titulaire d'une Licence Sciences et Techniques de la FSTH.</p>
+                <p>Passionnée par l'<strong>Intelligence Artificielle</strong> et la <strong>Data Science</strong>, je souhaite mettre à profit mes compétences dans le cadre d'un stage PFE, en contribuant à des projets concrets alliant analyse de données et développement de solutions intelligentes.</p>
+                <p>Curieuse, rigoureuse et orientée résultats, j'aime explorer des problèmes complexes et les transformer en solutions exploitables grâce à la donnée.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Background -->
+    <section id="academic" class="academic">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Formation</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <span class="timeline-date">2025 – Présent</span>
+                    <div class="timeline-content">
+                        <h3>Master en Science des Données et Systèmes Intelligents</h3>
+                        <span class="timeline-institution">Faculté Polydisciplinaire de Nador (FPN)</span>
+                        <p>Approfondissement des algorithmes d'IA, Big Data, Deep Learning, Machine Learning et systèmes décisionnels complexes.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date">2022 – 2025</span>
+                    <div class="timeline-content">
+                        <h3>Licence en Ingénierie des Données et Développement Logiciel</h3>
+                        <span class="timeline-institution">Faculté des Sciences et Techniques d'Al Hoceima (FSTH)</span>
+                        <p>Bases solides en programmation, mathématiques, statistiques, bases de données et développement logiciel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Compétences Techniques</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Langages de programmation -->
+                <div class="skill-card reveal">
+                    <i class="fas fa-code"></i>
+                    <h3>Langages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PL/SQL</span>
+                        <span class="skill-tag">C++</span>
+
+                    </div>
+                </div>
+
+
+                <!-- Data & IA -->
+                <div class="skill-card reveal">
+                    <i class="fas fa-brain"></i>
+                    <h3>Data &amp; IA</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Django</span>
+                    </div>
+                </div>
+
+                <!-- Développement Web -->
+                <div class="skill-card reveal">
+                    <i class="fas fa-globe"></i>
+                    <h3>Développement Web</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Bases de données -->
+                <div class="skill-card reveal">
+                    <i class="fas fa-database"></i>
+                    <h3>Bases de Données</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                    </div>
+                </div>
+                
+                <!-- Outils -->
+                <div class="skill-card reveal">
+                    <i class="fas fa-tools"></i>
+                    <h3>Outils</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Spyder</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">IntelliJ IDEA</span>
+                        <span class="skill-tag">Weka</span>
+                        <span class="skill-tag">SSIS</span>
+                        <span class="skill-tag">Microsoft Access</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Projets Académiques</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-image" id="project1-img"></div>
+                    <div class="project-info">
+                        <h3>Analyse de Sentiments — Réseaux Sociaux en Arabe Marocain</h3>
+                        <p>Développement d'un modèle de classification automatique des sentiments pour tweets en arabe marocain, avec déploiement via une application web Flask permettant l'analyse en temps réel.</p>
+                        <div class="project-tech">
+                            <span>AraBERT</span>
+                            <span>LSTM</span>
+                            <span>BiLSTM</span>
+                            <span>GRU</span>
+                            <span>CNN</span>
+                            <span>Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/imaneahachi/PFE-NLP-DARIJA-SENTIMENT-ANALYSIS" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <!-- <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal">
+                    <div class="project-image" id="project2-img"></div>
+                    <div class="project-info">
+                        <h3>Système de Prédiction de Profits d'Entreprise</h3>
+                        <p>Application web développée avec Streamlit pour la prédiction de profits d'entreprise via la régression linéaire multiple, incluant le prétraitement des données et la visualisation interactive.</p>
+                        <div class="project-tech">
+                            <span>Machine Learning</span>
+                            <span>Streamlit</span>
+                            <span>Régression Linéaire</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/imaneahachi/profit-prediction-app" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <!-- <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal">
+                    <div class="project-image" id="project3-img"></div>
+                    <div class="project-info">
+                        <h3>Business Intelligence &amp; Data Warehouse — Analyse des Réadmissions Hospitalières</h3>
+                        <p>Conception d'un pipeline BI complet pour l'analyse des réadmissions hospitalières : extraction multi-sources (CSV, Excel, SQLite), transformation et nettoyage des données avec Python et Pandas, chargement via SSIS dans un Data Warehouse SQL Server en schéma étoile, et création de dashboards Power BI interactifs (KPIs, analyse par âge, diagnostic, région, saisonnalité).</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>SQL Server</span>
+                            <span>SSIS</span>
+                            <span>Power BI</span>
+                            <span>ETL</span>
+                            <span>Data Warehouse</span>
+                            <span>DAX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/imaneahachi/Hospital-BI-Readmission" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <!-- <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
     
-    <script>
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Expérience</h2>
+                <div class="underline"></div>
+            </div>
 
-        let particles = [];
-        const particleCount = 60;
+            <div class="experience-card reveal">
+                <h3>Aéroport Al Hoceima</h3>
+                <span class="exp-role"><i class="fas fa-briefcase"></i> Stagiaire — Informatique</span>
+                <span class="exp-date"><i class="far fa-calendar-alt"></i> 2025 – 2026</span>
+                <ul>
+                    <li>Built a complete Business Intelligence pipeline processing flight records, using Python for ETL from three heterogeneous sources (CSV, Excel, SQLite) into a SQL Server Data Warehouse structured as a Star Schema, loaded via SSIS. On top of this Data Warehouse, developed an SSAS Tabular model featuring DAX measures and key performance indicators, which power four live-connected Power BI dashboards used for airline performance and delay analysis.</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        function init() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 2 + 1,
-                    speedX: (Math.random() - 0.5) * 0.4,
-                    speedY: (Math.random() - 0.5) * 0.4,
-                    opacity: Math.random() * 0.5 + 0.1
-                });
-            }
-        }
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach((p, index) => {
-                p.x += p.speedX;
-                p.y += p.speedY;
+    <!-- Languages & Soft Skills Section -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Langues et Soft Skills</h2>
+                <div class="underline"></div>
+            </div>
 
-                if (p.x < 0) p.x = canvas.width;
-                if (p.x > canvas.width) p.x = 0;
-                if (p.y < 0) p.y = canvas.height;
-                if (p.y > canvas.height) p.y = 0;
+            <div class="lang-skills-grid">
+                <div class="lang-card reveal">
+                    <i class="fas fa-language"></i>
+                    <h3>Langues</h3>
+                    <ul>
+                        <li>Français — professional proficiency</li>
+                        <li>Anglais — professional proficiency</li>
+                    </ul>
+                </div>
 
-                ctx.fillStyle = `rgba(0, 188, 212, ${p.opacity})`;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fill();
+                <div class="lang-card reveal">
+                    <i class="fas fa-users"></i>
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Sens de l'organisation et rigueur</li>
+                        <li>Esprit d'équipe</li>
+                        <li>Capacité d'adaptation</li>
+                        <li>Communication professionnelle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                for (let j = index + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dist = Math.sqrt((p.x - p2.x)**2 + (p.y - p2.y)**2);
-                    if (dist < 150) {
-                        ctx.strokeStyle = `rgba(0, 188, 212, ${0.15 * (1 - dist / 150)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                }
-            });
-            requestAnimationFrame(animate);
-        }
+    <!-- Contact Section -->
+    <section id="contact" class="contact-v2">
+        <div class="container reveal">
+            <!-- <div class="contact-label"><span class="contact-dash"></span>CONTACT</div> -->
+            <h2 class="contact-title">Envie d'en <span class="highlight">discuter</span> ?</h2>
+            <p class="contact-subtitle">Je suis ouverte aux opportunités de PFE  .</p>
 
-        window.addEventListener('resize', init);
-        init();
-        animate();
-    </script>
+            <div class="email-pill">
+                <span id="contact-email">imaneahachi@gmail.com</span>
+                <button class="copy-btn" onclick="copyEmail()" aria-label="Copier l'email">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/imane-ahachi-a26218288/" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/imaneahachi" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="padding: 2rem 0; text-align: center; color: var(--text-dim); font-size: 0.9rem;">
+            <p>&copy; 2026 Imane Ahachi — Data Science &amp; Intelligence Artificielle</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
