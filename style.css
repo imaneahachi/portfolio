@@ -740,7 +740,9 @@ body.dark-mode .availability-badge {
 }
 
 /* ===== Responsive ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
+    /* Navigation */
     .mobile-nav-toggle { display: block; }
 
     .nav-links {
@@ -754,16 +756,64 @@ body.dark-mode .availability-badge {
         padding: 2rem;
         gap: 1.5rem;
         border-bottom: 1px solid var(--border-color);
+        z-index: 999;   /* ← ajouté */
     }
 
     body.dark-mode .nav-links { background: rgba(15, 26, 24, 0.98); }
 
     .nav-links.active { display: flex; }
 
-    .hero h1 { font-size: 3rem; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .lang-skills-grid { grid-template-columns: 1fr; }
+    /* Barre d'actions (lang + thème) plus compacte */
+    .nav-actions {
+        gap: 0.5rem;
+    }
 
+    .lang-btn {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .theme-toggle {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Hero */
+    .hero h1 { font-size: 2.5rem; }
+
+    /* Grilles */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        gap: 1.5rem;   /* ← on remplace grid-template-columns */
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;   /* ← 1 seule colonne sur mobile */
+    }
+
+    .project-image {
+        width: 100%;
+        height: 180px;
+        min-height: 180px;
+    }
+
+    .project-info {
+        padding: 1.5rem;
+    }
+
+    .lang-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline */
+    .timeline-content {
+        padding: 1.25rem 1.25rem;
+    }
+
+    /* Hero buttons */
     .hero-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -771,8 +821,80 @@ body.dark-mode .availability-badge {
         margin-top: 1.5rem;
     }
 
+    /* Contact */
     .email-pill {
         font-size: 0.82rem;
         padding: 0.5rem 0.4rem 0.5rem 1rem;
+    }
+
+    /* Cards */
+    .about-card,
+    .skill-card,
+    .experience-card,
+    .lang-card,
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    /* Section titles */
+    .section-title h2 {
+        font-size: 1.9rem;
+    }
+
+    /* Sections padding réduit */
+    section {
+        padding: 4rem 0;
+    }
+}
+
+/* ===== Très petits écrans (téléphones) ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .nav-brand {
+        font-size: 1.1rem;
+    }
+
+    .lang-switch {
+        padding: 3px;
+    }
+
+    .lang-btn {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.7rem;
+    }
+
+    .project-tech span,
+    .skill-tag {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.65rem;
+    }
+
+    .contact-pill {
+        padding: 0.55rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .email-pill {
+        font-size: 0.72rem;
+        letter-spacing: -0.02em;
     }
 }
