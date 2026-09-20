@@ -8,7 +8,7 @@ let particles = [];
 const particleCount = 80;
 
 function initCanvas() {
-    canvas.width = window.innerWidth;
+    canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
     particles = [];
     for (let i = 0; i < particleCount; i++) {
